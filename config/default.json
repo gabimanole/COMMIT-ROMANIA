@@ -1,0 +1,34 @@
+{
+  "chapter": "Iasi",
+  "event": {
+    "title": "#42 Eveniment ( TEMPLATE )",
+    "number": "42",
+    "name": "Eveniment",
+    "type": "Event",
+    "date": "December 22, 2024",
+    "time": "18:00",
+    "location": {
+      "name": "ENTRIC",
+      "address": "Str. Palat 3, UBS 3, et. 4, Iasi, Iasi, Romania"
+    },
+    "registration": {
+      "href": "https://lu.ma/event/evt-MlnRl7gSD3a6Do2",
+      "class": "luma-checkout--button",
+      "dataAction": "checkout",
+      "dataEventId": "evt-MlnRl7gSD3a6Do2",
+      "text": "Register for Event",
+      "scriptSrc": "https://embed.lu.ma/checkout-button.js"
+    }
+  },
+  "speaker": {
+    "name": "J. Doe",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus.",
+    "image": "https://nouveaux.ro/wp-content/uploads/2024/03/Adrian-Rindasu-300x300.jpeg"
+  },
+  "agenda": [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nSuspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nSuspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nSuspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus."
+  ],
+  "summary": "Suspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus."
+}

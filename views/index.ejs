@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - COMM-IT Romania</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .header-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        .loading {
+            display: none;
+        }
+        .result-section {
+            display: none;
+        }
+        .config-section {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark header-gradient">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-code me-2"></i>
+                AVADA Template Processor
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text">
+                    <i class="fas fa-globe me-1"></i>
+                    <%= domain %>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="event-tab" data-bs-toggle="tab" data-bs-target="#event" type="button" role="tab">
+                    <i class="fas fa-calendar-alt me-2"></i>Event Data
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="config-tab" data-bs-toggle="tab" data-bs-target="#config" type="button" role="tab">
+                    <i class="fas fa-cog me-2"></i>Configuration
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="mainTabsContent">
+            <!-- Event Data Tab -->
+            <div class="tab-pane fade show active" id="event" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card card-hover">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0"><i class="fas fa-edit me-2"></i>Event Information</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="eventForm">
+                                    <!-- Chapter Selection -->
+                                    <div class="mb-3">
+                                        <label for="chapter" class="form-label">Chapter</label>
+                                        <select class="form-select" id="chapter" name="chapter" required>
+                                            <option value="Iasi">Iasi</option>
+                                            <option value="Cluj-Napoca">Cluj-Napoca</option>
+                                            <option value="Timisoara">Timisoara</option>
+                                            <option value="Bucharest">Bucharest</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Event Title -->
+                                    <div class="mb-3">
+                                        <label for="eventTitle" class="form-label">Event Title</label>
+                                        <input type="text" class="form-control" id="eventTitle" name="eventTitle" 
+                                               placeholder="#42 Eveniment ( TEMPLATE )" required>
+                                        <div class="form-text">Format: #[number] [title]</div>
+                                    </div>
+
+                                    <!-- Event Date & Time -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="eventDate" class="form-label">Date</label>
+                                                <input type="date" class="form-control" id="eventDate" name="eventDate" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="eventTime" class="form-label">Time</label>
+                                                <input type="time" class="form-control" id="eventTime" name="eventTime" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Location -->
+                                    <div class="mb-3">
+                                        <label for="locationName" class="form-label">Location Name</label>
+                                        <input type="text" class="form-control" id="locationName" name="locationName" 
+                                               placeholder="ENTRIC" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="locationAddress" class="form-label">Location Address</label>
+                                        <textarea class="form-control" id="locationAddress" name="locationAddress" rows="2" 
+                                                  placeholder="Str. Palat 3, UBS 3, et. 4, Iasi, Iasi, Romania" required></textarea>
+                                    </div>
+
+                                    <!-- Registration -->
+                                    <div class="mb-3">
+                                        <label for="registrationUrl" class="form-label">Registration URL</label>
+                                        <input type="url" class="form-control" id="registrationUrl" name="registrationUrl" 
+                                               placeholder="https://lu.ma/event/evt-..." required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registrationText" class="form-label">Registration Button Text</label>
+                                        <input type="text" class="form-control" id="registrationText" name="registrationText" 
+                                               value="Register for Event" required>
+                                    </div>
+
+                                    <!-- Speaker -->
+                                    <div class="mb-3">
+                                        <label for="speakerName" class="form-label">Speaker Name</label>
+                                        <input type="text" class="form-control" id="speakerName" name="speakerName" 
+                                               placeholder="J. Doe" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="speakerDescription" class="form-label">Speaker Description</label>
+                                        <textarea class="form-control" id="speakerDescription" name="speakerDescription" rows="4" required></textarea>
+                                    </div>
+
+                                    <!-- Agenda -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Agenda Items</label>
+                                        <div id="agendaItems">
+                                            <div class="agenda-item mb-2">
+                                                <textarea class="form-control agenda-text" rows="3" placeholder="Agenda item 1"></textarea>
+                                                <button type="button" class="btn btn-sm btn-outline-danger mt-1 remove-agenda">
+                                                    <i class="fas fa-trash"></i> Remove
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" id="addAgendaItem">
+                                            <i class="fas fa-plus"></i> Add Agenda Item
+                                        </button>
+                                    </div>
+
+                                    <!-- Event Summary -->
+                                    <div class="mb-3">
+                                        <label for="eventSummary" class="form-label">Event Summary</label>
+                                        <textarea class="form-control" id="eventSummary" name="eventSummary" rows="4" required></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-magic me-2"></i>Process Template
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result Section -->
+                    <div class="col-lg-4">
+                        <div class="card result-section" id="resultCard">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0"><i class="fas fa-check-circle me-2"></i>Processing Complete</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-success">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    Template processed successfully!
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-outline-primary" id="downloadBtn">
+                                        <i class="fas fa-download me-2"></i>Download Result
+                                    </button>
+                                    <button class="btn btn-outline-secondary" id="previewBtn">
+                                        <i class="fas fa-eye me-2"></i>Preview
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Loading Section -->
+                        <div class="card loading" id="loadingCard">
+                            <div class="card-body text-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Processing...</span>
+                                </div>
+                                <p class="mt-2">Processing template...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Configuration Tab -->
+            <div class="tab-pane fade" id="config" role="tabpanel">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0"><i class="fas fa-cog me-2"></i>Default Configuration</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Configure default values for new events. These will be used as starting points.
+                        </div>
+                        <button class="btn btn-primary" id="loadConfigBtn">
+                            <i class="fas fa-download me-2"></i>Load Current Config
+                        </button>
+                        <button class="btn btn-success ms-2" id="saveConfigBtn">
+                            <i class="fas fa-save me-2"></i>Save Configuration
+                        </button>
+                        <div id="configEditor" class="mt-3">
+                            <textarea class="form-control" id="configText" rows="20" placeholder="Configuration will appear here..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div class="modal fade" id="previewModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Template Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="previewFrame" width="100%" height="600" style="border: none;"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
