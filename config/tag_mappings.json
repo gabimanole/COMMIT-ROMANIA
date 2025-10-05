@@ -1,0 +1,45 @@
+{
+  "tag_mappings": {
+    "{{company_name}}": "Your Company Name",
+    "{{company_email}}": "contact@yourcompany.com",
+    "{{company_phone}}": "+1 (555) 123-4567",
+    "{{company_address}}": "123 Business St, City, State 12345",
+    "{{website_url}}": "https://yourcompany.com",
+    "{{current_year}}": "2025",
+    "{{company_logo}}": "https://yourcompany.com/logo.png",
+    "{{social_facebook}}": "https://facebook.com/yourcompany",
+    "{{social_twitter}}": "https://twitter.com/yourcompany",
+    "{{social_linkedin}}": "https://linkedin.com/company/yourcompany",
+    "{{social_instagram}}": "https://instagram.com/yourcompany",
+    "{{contact_person}}": "John Doe",
+    "{{contact_title}}": "Sales Manager",
+    "{{business_hours}}": "Monday - Friday: 9:00 AM - 6:00 PM",
+    "{{service_area}}": "Nationwide",
+    "{{tagline}}": "Your Trusted Partner in Excellence",
+    "{{mission_statement}}": "We are committed to providing exceptional service and innovative solutions to our clients.",
+    "{{founded_year}}": "2010",
+    "{{team_size}}": "50+",
+    "{{certifications}}": "ISO 9001, BBB A+ Rating",
+    "{{awards}}": "Best Company 2024, Excellence Award 2023"
+  },
+  "tag_formats": [
+    "{{tag_name}}",
+    "{{ tag_name }}",
+    "[tag_name]",
+    "{tag_name}",
+    "%%tag_name%%"
+  ],
+  "output_settings": {
+    "remove_html_comments": true,
+    "clean_whitespace": true,
+    "preserve_line_breaks": true,
+    "remove_empty_paragraphs": true,
+    "normalize_spacing": true
+  },
+  "processing_options": {
+    "case_sensitive": false,
+    "partial_matches": false,
+    "fallback_value": "[TAG_NOT_FOUND]",
+    "log_replacements": true
+  }
+}

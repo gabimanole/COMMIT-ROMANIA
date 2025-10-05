@@ -1,58 +1,97 @@
-# COMMIT Romania - Supporting Code
+# WordPress Template Processor
 
-Welcome to the COMMIT Romania supporting code repository! This project provides tools, utilities, and resources to support the COMMIT programming competition in Romania.
-
-## About COMMIT
-
-COMMIT is a prestigious programming competition in Romania that challenges participants with algorithmic problems and coding challenges. This repository contains supporting infrastructure to help organize, manage, and participate in COMMIT events.
+A powerful tool for processing WordPress templates (especially AVADA templates) by replacing guarded tags with actual content. Perfect for generating clean, copy-paste ready text files from template files.
 
 ## Features
 
-- **Competition Management Tools**: Scripts and utilities for organizing COMMIT events
-- **Problem Templates**: Standard templates for creating programming challenges
-- **Testing Framework**: Automated testing tools for problem validation
-- **Participant Resources**: Documentation and guides for contestants
-- **Administrative Tools**: Event management and scoring utilities
+- **Tag Replacement**: Replace custom tags with your content using JSON configuration
+- **Multiple Tag Formats**: Support for various tag formats ({{tag}}, [tag], {tag}, %%tag%%)
+- **Clean Output**: Generate clean text files ready for copy-paste
+- **Configurable**: Easy-to-use JSON configuration system
+- **Batch Processing**: Process multiple templates with different configurations
 
 ## Directory Structure
 
 ```
-├── src/                    # Source code for tools and utilities
-├── problems/              # Problem templates and examples
-├── tests/                 # Testing framework and test cases
-├── docs/                  # Documentation and guides
-├── scripts/               # Utility scripts for competition management
-├── config/                # Configuration files
-└── examples/              # Example solutions and implementations
+├── wordpress_template_processor.py  # Main processing script
+├── config/                          # Configuration files
+│   └── tag_mappings.json           # Tag mappings and settings
+├── input/                           # Input template files
+├── output/                          # Processed output files
+├── examples/                        # Example templates and configurations
+└── templates/                       # Template storage
 ```
 
 ## Getting Started
 
-1. Clone this repository:
+1. **Clone this repository:**
    ```bash
    git clone https://github.com/gabimanole/COMMIT-ROMANIA.git
    cd COMMIT-ROMANIA
    ```
 
-2. Install dependencies (if any):
+2. **Install Python dependencies:**
    ```bash
-   # Dependencies will be added as the project grows
+   # No external dependencies required - uses only Python standard library
    ```
 
-3. Explore the documentation in the `docs/` directory
+3. **Configure your tag mappings:**
+   - Edit `config/tag_mappings.json` with your content
+   - Add your custom tags and their replacement values
 
-## Contributing
+4. **Process your template:**
+   ```bash
+   python wordpress_template_processor.py
+   ```
 
-We welcome contributions to improve the COMMIT Romania supporting infrastructure! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
+## Usage
+
+### Basic Usage
+```bash
+# Process with default files
+python wordpress_template_processor.py
+
+# Process with custom files
+python wordpress_template_processor.py config/my_config.json input/my_template.html output/result.txt
+
+# List available tags
+python wordpress_template_processor.py --list-tags
+
+# Validate configuration
+python wordpress_template_processor.py --validate
+```
+
+### Configuration
+
+Edit `config/tag_mappings.json` to customize:
+- **tag_mappings**: Your content replacements
+- **tag_formats**: Supported tag formats
+- **output_settings**: Content cleaning options
+- **processing_options**: Advanced processing settings
+
+### Example Tag Mappings
+
+```json
+{
+  "tag_mappings": {
+    "{{company_name}}": "Your Company Name",
+    "{{company_email}}": "contact@yourcompany.com",
+    "{{company_phone}}": "+1 (555) 123-4567"
+  }
+}
+```
+
+## Examples
+
+Check the `examples/` directory for:
+- Sample templates with various tag formats
+- Different configuration examples
+- Output samples
 
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## Contact
-
-For questions about COMMIT Romania or this repository, please reach out to the maintainers.
-
 ---
 
-**Good luck to all COMMIT participants! 🚀**
+**Ready to process your WordPress templates! 🚀**

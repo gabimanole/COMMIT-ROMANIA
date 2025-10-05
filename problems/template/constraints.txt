@@ -1,7 +1,0 @@
-Time Limit: 1 second
-Memory Limit: 256 MB
-Input Size: N ≤ 10^5
-Values: 1 ≤ values ≤ 10^9
-
-Additional problem-specific constraints:
-- [Add any specific constraints for this problem]

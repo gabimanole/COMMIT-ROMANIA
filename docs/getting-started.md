@@ -1,11 +1,11 @@
-# Getting Started with COMMIT Romania Tools
+# Getting Started with WordPress Template Processor
 
-Welcome to the COMMIT Romania supporting code! This guide will help you get started with using and contributing to the project.
+Welcome to the WordPress Template Processor! This guide will help you get started with processing WordPress templates and replacing tags with your content.
 
 ## Prerequisites
 
-- Basic programming knowledge (preferably in Python, C++, or Java)
-- Git for version control
+- Python 3.6 or higher
+- Basic understanding of HTML/WordPress templates
 - Text editor or IDE of your choice
 
 ## Installation
@@ -16,48 +16,105 @@ Welcome to the COMMIT Romania supporting code! This guide will help you get star
    cd COMMIT-ROMANIA
    ```
 
-2. **Explore the structure:**
+2. **Verify Python installation:**
    ```bash
-   ls -la
+   python --version
+   # or
+   python3 --version
    ```
 
 ## Directory Overview
 
-- **`src/`** - Core utilities and tools
-- **`problems/`** - Problem templates and examples
-- **`tests/`** - Testing framework
+- **`wordpress_template_processor.py`** - Main processing script
+- **`config/`** - Configuration files (tag mappings, settings)
+- **`input/`** - Your template files to process
+- **`output/`** - Generated clean text files
+- **`examples/`** - Sample templates and configurations
+- **`templates/`** - Template storage
 - **`docs/`** - Documentation (you are here!)
-- **`scripts/`** - Utility scripts
-- **`config/`** - Configuration files
-- **`examples/`** - Example implementations
 
-## Next Steps
+## Quick Start
 
-1. Browse the [examples](../examples/) to see sample problems
-2. Read the [problem format guide](problem-format.md) to understand the standard structure
-3. Check out the [testing guide](testing-guide.md) to learn about validation
-4. See the [Contributing Guidelines](../CONTRIBUTING.md) to start contributing
+### 1. Configure Your Tags
+
+Edit `config/tag_mappings.json` to define your content:
+
+```json
+{
+  "tag_mappings": {
+    "{{company_name}}": "Your Company Name",
+    "{{company_email}}": "contact@yourcompany.com",
+    "{{company_phone}}": "+1 (555) 123-4567"
+  }
+}
+```
+
+### 2. Prepare Your Template
+
+Place your WordPress template in `input/template.html` with tags like:
+```html
+<h1>{{company_name}}</h1>
+<p>Contact us at {{company_email}} or {{company_phone}}</p>
+```
+
+### 3. Process the Template
+
+```bash
+python wordpress_template_processor.py
+```
+
+### 4. Get Your Clean Text
+
+Check `output/processed.txt` for your copy-paste ready content!
 
 ## Common Tasks
 
-### Creating a New Problem
-
-1. Use the problem template in `problems/template/`
-2. Follow the standard format described in [problem-format.md](problem-format.md)
-3. Add test cases in the appropriate format
-4. Validate using the testing framework
-
-### Running Tests
+### Processing Different Templates
 
 ```bash
-# Instructions for running tests will be added as the framework develops
+# Use custom files
+python wordpress_template_processor.py config/my_config.json input/my_template.html output/my_result.txt
 ```
 
-### Getting Help
+### Listing Available Tags
 
-- Check the documentation in this `docs/` directory
-- Look at examples in the `examples/` directory
+```bash
+python wordpress_template_processor.py --list-tags
+```
+
+### Validating Configuration
+
+```bash
+python wordpress_template_processor.py --validate
+```
+
+### Batch Processing
+
+Create multiple configuration files for different clients:
+- `config/client1.json`
+- `config/client2.json`
+- `config/client3.json`
+
+Then process each:
+```bash
+python wordpress_template_processor.py config/client1.json input/template.html output/client1.txt
+python wordpress_template_processor.py config/client2.json input/template.html output/client2.txt
+```
+
+## Supported Tag Formats
+
+The processor supports multiple tag formats:
+- `{{tag_name}}` - Double curly braces
+- `{{ tag_name }}` - Double curly braces with spaces
+- `[tag_name]` - Square brackets
+- `{tag_name}` - Single curly braces
+- `%%tag_name%%` - Double percent signs
+
+## Getting Help
+
+- Check the examples in the `examples/` directory
+- Look at the sample configuration in `config/tag_mappings.json`
+- Read the main script comments for advanced usage
 - Open an issue on GitHub for questions
-- Read the existing code for implementation details
 
-Happy coding! 🚀
+Happy template processing! 🚀

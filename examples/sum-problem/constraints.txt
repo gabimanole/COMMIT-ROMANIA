@@ -1,3 +1,0 @@
-Time Limit: 1 second
-Memory Limit: 256 MB
-Input Range: -10^9 ≤ A, B ≤ 10^9
