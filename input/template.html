@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{company_name}} - {{tagline}}</title>
+    <meta name="description" content="{{mission_statement}}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="{{company_logo}}" alt="{{company_name}} Logo">
+        </div>
+        <h1>{{company_name}}</h1>
+        <p class="tagline">{{tagline}}</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <h2>Welcome to {{company_name}}</h2>
+            <p>{{mission_statement}}</p>
+            <p>Founded in {{founded_year}}, we have grown to a team of {{team_size}} professionals.</p>
+        </section>
+
+        <section class="contact-info">
+            <h3>Contact Information</h3>
+            <div class="contact-details">
+                <p><strong>Email:</strong> {{company_email}}</p>
+                <p><strong>Phone:</strong> {{company_phone}}</p>
+                <p><strong>Address:</strong> {{company_address}}</p>
+                <p><strong>Website:</strong> <a href="{{website_url}}">{{website_url}}</a></p>
+            </div>
+            
+            <div class="business-hours">
+                <h4>Business Hours</h4>
+                <p>{{business_hours}}</p>
+            </div>
+        </section>
+
+        <section class="team">
+            <h3>Our Team</h3>
+            <p>Contact Person: {{contact_person}} ({{contact_title}})</p>
+            <p>Team Size: {{team_size}}</p>
+        </section>
+
+        <section class="credentials">
+            <h3>Credentials & Awards</h3>
+            <p><strong>Certifications:</strong> {{certifications}}</p>
+            <p><strong>Awards:</strong> {{awards}}</p>
+        </section>
+
+        <section class="social-media">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="{{social_facebook}}">Facebook</a>
+                <a href="{{social_twitter}}">Twitter</a>
+                <a href="{{social_linkedin}}">LinkedIn</a>
+                <a href="{{social_instagram}}">Instagram</a>
+            </div>
+        </section>
+
+        <section class="service-area">
+            <h3>Service Area</h3>
+            <p>We proudly serve {{service_area}}.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; {{current_year}} {{company_name}}. All rights reserved.</p>
+        <p>{{company_address}} | {{company_phone}} | {{company_email}}</p>
+    </footer>
+</body>
+</html>

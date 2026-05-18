@@ -1,0 +1,37 @@
+{
+  "tag_mappings": {
+    "{{event_title}}": "#42 Eveniment ( TEMPLATE )",
+    "{{event_number}}": "42",
+    "{{event_name}}": "Eveniment",
+    "{{event_type}}": "Event",
+    "{{event_date}}": "December 22, 2024",
+    "{{event_time}}": "18:00",
+    "{{event_location}}": "ENTRIC\nStr. Palat 3, UBS 3, et. 4, Iasi, Iasi, Romania",
+    "{{speaker_name}}": "J. Doe",
+    "{{speaker_description}}": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus.",
+    "{{agenda_item_1}}": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nSuspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus.",
+    "{{agenda_item_2}}": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nSuspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus.",
+    "{{agenda_item_3}}": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nSuspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus.",
+    "{{event_summary}}": "Suspendisse finibus interdum nibh, pharetra maximus sapien. Cras quam mi, cursus sed augue aliquam, pellentesque mattis orci. Donec tristique eros urna, ac lacinia est feugiat vel. Proin turpis nibh, convallis auctor vehicula quis, sollicitudin vitae lorem. Suspendisse sed nibh mattis, faucibus tellus."
+  },
+  "tag_formats": [
+    "{{tag_name}}",
+    "{{ tag_name }}",
+    "[tag_name]",
+    "{tag_name}",
+    "%%tag_name%%"
+  ],
+  "output_settings": {
+    "remove_html_comments": true,
+    "clean_whitespace": true,
+    "preserve_line_breaks": true,
+    "remove_empty_paragraphs": true,
+    "normalize_spacing": true
+  },
+  "processing_options": {
+    "case_sensitive": false,
+    "partial_matches": false,
+    "fallback_value": "[TAG_NOT_FOUND]",
+    "log_replacements": true
+  }
+}
